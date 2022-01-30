@@ -5,9 +5,12 @@ public class BubbleSort {
 
         int[] arr = {9,5,6,3,2,1,4};
         bubbleSort(arr);
-        System.out.println(Arrays.toString(arr));
+        System.out.println("bubble sort 1: " +Arrays.toString(arr));
 
 
+        int[] arr2 = {9,5,6,3,2,1,4,10};
+        bubbleSort2(arr2);
+        System.out.println("bubble sort 2: " + Arrays.toString(arr2));
     }
 
     static void bubbleSort(int[] array){
@@ -23,4 +26,22 @@ public class BubbleSort {
         }
 
     }
+
+    public static void bubbleSort2(int[] arr) {
+        boolean sorted = false;
+        int temp;
+        while(!sorted) {
+            sorted = true;
+            for (int i = 0; i < arr.length - 1; i++) {
+                if (arr[i] > arr[i+1]) {
+                    temp = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = temp;
+                    sorted = false;
+                }
+            }
+        }
+    }
+
+
 }
